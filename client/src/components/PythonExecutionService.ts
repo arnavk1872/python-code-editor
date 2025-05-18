@@ -7,7 +7,10 @@ export interface ExecutionResult {
 }
 
 export class CodeExecutionService {
-  private static readonly API_URL = 'http://localhost:5000/api/execute';
+  private static readonly API_URL =
+    process.env.NODE_ENV === "production"
+      ? "https://python-code-editor-jgfv.onrender.com/api/execute"
+      : "http://localhost:5000/api/execaute";
 
   /**
    * Executes code by sending it to the backend API
@@ -15,37 +18,43 @@ export class CodeExecutionService {
    * @param input Optional user input for the code
    * @returns Promise with execution result
    */
-  static async executeCode(code: string, input?: string): Promise<ExecutionResult> {
+  static async executeCode(
+    code: string,
+    input?: string
+  ): Promise<ExecutionResult> {
     console.log("Sending code to backend for execution:", code);
-    
+
     try {
       const response = await fetch(this.API_URL, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           code,
-          input: input || ''
+          input: input || "",
         }),
       });
-      
+
       if (!response.ok) {
         throw new Error(`Server responded with status: ${response.status}`);
       }
-      
+
       const result = await response.json();
       return {
-        output: result.output || '',
+        output: result.output || "",
         error: result.error,
-        success: result.success
+        success: result.success,
       };
     } catch (err) {
       console.error("Error executing code:", err);
       return {
-        output: '',
-        error: err instanceof Error ? err.message : 'Failed to connect to the code execution service',
-        success: false
+        output: "",
+        error:
+          err instanceof Error
+            ? err.message
+            : "Failed to connect to the code execution service",
+        success: false,
       };
     }
   }
