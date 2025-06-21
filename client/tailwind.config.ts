@@ -69,6 +69,7 @@ export default {
 				}
 			},
 			fontFamily: {
+				sans: ['Poppins', 'system-ui', 'sans-serif'],
 				mono: ['Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', 'monospace'],
 			},
 			borderRadius: {

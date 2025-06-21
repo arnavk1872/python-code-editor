@@ -9,10 +9,9 @@ const Navbar: React.FC = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Code className="h-7 w-7" />
-          <h1 className="text-xl font-bold">CodeKids</h1>
+          <h1 className="text-xl font-bold">PyNest</h1>
         </div>
         <div className="flex items-center space-x-2">
-          <span className="text-sm hidden md:inline-block">Python Coding Editor for Young Programmers</span>
           <a href="https://www.python.org/doc/" target="_blank" rel="noopener noreferrer">
             <Button variant="outline" size="sm" className="bg-white/10 hover:bg-white/20 border-white/20">
               Python Docs
