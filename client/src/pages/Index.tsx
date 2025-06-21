@@ -108,7 +108,7 @@ const Index = () => {
       <div className="flex-1 container mx-auto px-4 py-6 flex flex-col">
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 flex-1 flex flex-col">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Code Playground</h1>
+            <h1 className="text-2xl font-bold text-gray-800 dark:text-white">Pynest</h1>
             <CodeEditorHelp />
           </div>
           
@@ -152,7 +152,7 @@ const Index = () => {
       <footer className="bg-gray-100 dark:bg-gray-800 py-4 border-t border-gray-200 dark:border-gray-700">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm text-gray-600 dark:text-gray-400">
-            CodeLab - A fun coding editor for programmers
+            PyNest Copyright 2025
           </p>
         </div>
       </footer>
